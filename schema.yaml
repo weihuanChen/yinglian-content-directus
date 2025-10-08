@@ -1,0 +1,2561 @@
+
+version: 1
+directus: 11.12.0
+vendor: postgres
+collections:
+  - collection: ai_prompts
+    meta:
+      accountability: all
+      archive_app_filter: true
+      archive_field: null
+      archive_value: archived
+      collapse: open
+      collection: ai_prompts
+      color: null
+      display_template: '{{name}}'
+      group: website
+      hidden: false
+      icon: magic_button
+      item_duplication_fields: null
+      note: Store and manage all your prompts for LLMs
+      preview_url: null
+      singleton: false
+      sort: 10
+      sort_field: sort
+      translations: null
+      unarchive_value: draft
+      versioning: false
+    schema:
+      name: ai_prompts
+  - collection: block_button
+    meta:
+      accountability: all
+      archive_app_filter: true
+      archive_field: null
+      archive_value: archived
+      collapse: open
+      collection: block_button
+      color: null
+      display_template: '{{label}} - {{type}}'
+      group: block_button_group
+      hidden: true
+      icon: smart_button
+      item_duplication_fields:
+        - sort
+        - type
+        - page
+        - post
+        - url
+        - label
+        - variant
+      note: null
+      preview_url: null
+      singleton: false
+      sort: 1
+      sort_field: sort
+      translations:
+        - language: en-US
+          plural: Buttons
+          singular: Button
+          translation: Button
+      unarchive_value: draft
+      versioning: false
+    schema:
+      name: block_button
+  - collection: block_button_group
+    meta:
+      accountability: all
+      archive_app_filter: true
+      archive_field: null
+      archive_value: archived
+      collapse: open
+      collection: block_button_group
+      color: null
+      display_template: '{{buttons.label}}'
+      group: blocks
+      hidden: true
+      icon: smart_button
+      item_duplication_fields:
+        - sort
+        - buttons.sort
+        - buttons.type
+        - buttons.page
+        - buttons.post
+        - buttons.url
+        - buttons.label
+        - buttons.variant
+      note: null
+      preview_url: null
+      singleton: false
+      sort: 8
+      sort_field: null
+      translations:
+        - language: en-US
+          plural: Button Groups
+          singular: Button Group
+          translation: Button Group
+      unarchive_value: draft
+      versioning: false
+    schema:
+      name: block_button_group
+  - collection: block_form
+    meta:
+      accountability: all
+      archive_app_filter: true
+      archive_field: null
+      archive_value: null
+      collapse: open
+      collection: block_form
+      color: null
+      display_template: '{{form.title}}'
+      group: blocks
+      hidden: true
+      icon: format_shapes
+      item_duplication_fields:
+        - tagline
+        - headline
+        - form
+      note: null
+      preview_url: null
+      singleton: false
+      sort: 3
+      sort_field: null
+      translations:
+        - language: en-US
+          translation: Form
+      unarchive_value: null
+      versioning: false
+    schema:
+      name: block_form
+  - collection: block_gallery
+    meta:
+      accountability: all
+      archive_app_filter: true
+      archive_field: null
+      archive_value: null
+      collapse: open
+      collection: block_gallery
+      color: null
+      display_template: '{{headline}}'
+      group: blocks
+      hidden: true
+      icon: grid_view
+      item_duplication_fields:
+        - tagline
+        - headline
+        - items.block_gallery
+        - items.directus_file
+        - items.sort
+      note: null
+      preview_url: null
+      singleton: false
+      sort: 5
+      sort_field: null
+      translations:
+        - language: en-US
+          plural: Gallery
+          singular: Gallery
+          translation: Gallery
+      unarchive_value: null
+      versioning: false
+    schema:
+      name: block_gallery
+  - collection: block_gallery_items
+    meta:
+      accountability: all
+      archive_app_filter: true
+      archive_field: null
+      archive_value: null
+      collapse: open
+      collection: block_gallery_items
+      color: null
+      display_template: null
+      group: block_gallery
+      hidden: true
+      icon: gallery_thumbnail
+      item_duplication_fields: null
+      note: null
+      preview_url: null
+      singleton: false
+      sort: 1
+      sort_field: null
+      translations:
+        - language: en-US
+          translation: Gallery Items
+      unarchive_value: null
+      versioning: false
+    schema:
+      name: block_gallery_items
+  - collection: block_hero
+    meta:
+      accountability: all
+      archive_app_filter: true
+      archive_field: null
+      archive_value: null
+      collapse: open
+      collection: block_hero
+      color: null
+      display_template: '{{headline}}'
+      group: blocks
+      hidden: true
+      icon: aspect_ratio
+      item_duplication_fields:
+        - tagline
+        - description
+        - headline
+        - image
+        - layout
+        - button_group.sort
+        - button_group.buttons.sort
+        - button_group.buttons.type
+        - button_group.buttons.page
+        - button_group.buttons.post
+        - button_group.buttons.url
+        - button_group.buttons.label
+        - button_group.buttons.variant
+      note: null
+      preview_url: null
+      singleton: false
+      sort: 1
+      sort_field: null
+      translations:
+        - language: en-US
+          plural: Hero
+          singular: Hero
+          translation: Hero
+      unarchive_value: null
+      versioning: false
+    schema:
+      name: block_hero
+  - collection: block_posts
+    meta:
+      accountability: all
+      archive_app_filter: true
+      archive_field: null
+      archive_value: null
+      collapse: open
+      collection: block_posts
+      color: null
+      display_template: '{{headline}}'
+      group: blocks
+      hidden: true
+      icon: signpost
+      item_duplication_fields:
+        - tagline
+        - headline
+        - collection
+        - limit
+      note: null
+      preview_url: null
+      singleton: false
+      sort: 4
+      sort_field: null
+      translations:
+        - language: en-US
+          translation: Posts
+      unarchive_value: null
+      versioning: false
+    schema:
+      name: block_posts
+  - collection: block_pricing
+    meta:
+      accountability: all
+      archive_app_filter: true
+      archive_field: null
+      archive_value: null
+      collapse: open
+      collection: block_pricing
+      color: null
+      display_template: '{{headline}}'
+      group: blocks
+      hidden: true
+      icon: attach_money
+      item_duplication_fields:
+        - tagline
+        - headline
+        - pricing_cards.title
+        - pricing_cards.badge
+        - pricing_cards.price
+        - pricing_cards.is_highlighted
+        - pricing_cards.features
+        - pricing_cards.description
+        - pricing_cards.sort
+        - pricing_cards.button.type
+        - pricing_cards.button.sort
+        - pricing_cards.button.page
+        - pricing_cards.button.post
+        - pricing_cards.button.url
+        - pricing_cards.button.label
+        - pricing_cards.button.variant
+      note: null
+      preview_url: null
+      singleton: false
+      sort: 7
+      sort_field: null
+      translations:
+        - language: en-US
+          translation: Pricing
+      unarchive_value: null
+      versioning: false
+    schema:
+      name: block_pricing
+  - collection: block_pricing_cards
+    meta:
+      accountability: all
+      archive_app_filter: true
+      archive_field: null
+      archive_value: null
+      collapse: open
+      collection: block_pricing_cards
+      color: null
+      display_template: null
+      group: block_pricing
+      hidden: true
+      icon: price_change
+      item_duplication_fields: null
+      note: null
+      preview_url: null
+      singleton: false
+      sort: 1
+      sort_field: null
+      translations:
+        - language: en-US
+          translation: Pricing Cards
+      unarchive_value: null
+      versioning: false
+    schema:
+      name: block_pricing_cards
+  - collection: block_richtext
+    meta:
+      accountability: all
+      archive_app_filter: true
+      archive_field: null
+      archive_value: null
+      collapse: open
+      collection: block_richtext
+      color: null
+      display_template: '{{headline}}'
+      group: blocks
+      hidden: true
+      icon: format_color_text
+      item_duplication_fields:
+        - tagline
+        - headline
+        - content
+        - alignment
+      note: null
+      preview_url: null
+      singleton: false
+      sort: 2
+      sort_field: null
+      translations:
+        - language: en-US
+          plural: Rich Text
+          singular: Rich Text
+          translation: Rich Text
+      unarchive_value: null
+      versioning: false
+    schema:
+      name: block_richtext
+  - collection: blocks
+    meta:
+      accountability: all
+      archive_app_filter: true
+      archive_field: null
+      archive_value: null
+      collapse: closed
+      collection: blocks
+      color: null
+      display_template: null
+      group: null
+      hidden: true
+      icon: content_copy
+      item_duplication_fields: null
+      note: null
+      preview_url: null
+      singleton: false
+      sort: 2
+      sort_field: null
+      translations: null
+      unarchive_value: null
+      versioning: false
+  - collection: form_fields
+    meta:
+      accountability: all
+      archive_app_filter: true
+      archive_field: null
+      archive_value: null
+      collapse: open
+      collection: form_fields
+      color: null
+      display_template: '{{name}} • {{type}}'
+      group: forms
+      hidden: true
+      icon: input
+      item_duplication_fields: null
+      note: Individual fields for each form
+      preview_url: null
+      singleton: false
+      sort: 1
+      sort_field: null
+      translations: null
+      unarchive_value: null
+      versioning: false
+    schema:
+      name: form_fields
+  - collection: form_submission_values
+    meta:
+      accountability: all
+      archive_app_filter: true
+      archive_field: null
+      archive_value: null
+      collapse: open
+      collection: form_submission_values
+      color: null
+      display_template: null
+      group: form_submissions
+      hidden: true
+      icon: list
+      item_duplication_fields: null
+      note: Individual responses to each form field within a form submission
+      preview_url: null
+      singleton: false
+      sort: 1
+      sort_field: null
+      translations:
+        - language: en-US
+          translation: Submission Values
+      unarchive_value: null
+      versioning: false
+    schema:
+      name: form_submission_values
+  - collection: form_submissions
+    meta:
+      accountability: all
+      archive_app_filter: true
+      archive_field: null
+      archive_value: null
+      collapse: open
+      collection: form_submissions
+      color: null
+      display_template: '{{timestamp}} • {{form}}'
+      group: website
+      hidden: false
+      icon: inbox
+      item_duplication_fields: null
+      note: Data for all form responses
+      preview_url: null
+      singleton: false
+      sort: 6
+      sort_field: null
+      translations: null
+      unarchive_value: null
+      versioning: false
+    schema:
+      name: form_submissions
+  - collection: forms
+    meta:
+      accountability: all
+      archive_app_filter: true
+      archive_field: is_active
+      archive_value: 'false'
+      collapse: open
+      collection: forms
+      color: null
+      display_template: '{{title}}'
+      group: website
+      hidden: false
+      icon: text_format
+      item_duplication_fields:
+        - title
+        - submit_label
+        - on_success
+        - success_message
+        - success_redirect_url
+        - status
+        - fields
+        - emails
+      note: Dynamic forms
+      preview_url: null
+      singleton: false
+      sort: 5
+      sort_field: sort
+      translations: null
+      unarchive_value: 'true'
+      versioning: false
+    schema:
+      name: forms
+  - collection: globals
+    meta:
+      accountability: all
+      archive_app_filter: true
+      archive_field: null
+      archive_value: null
+      collapse: open
+      collection: globals
+      color: null
+      display_template: null
+      group: website
+      hidden: false
+      icon: south_america
+      item_duplication_fields: null
+      note: Site-wide settings
+      preview_url: null
+      singleton: true
+      sort: 8
+      sort_field: null
+      translations: null
+      unarchive_value: null
+      versioning: false
+    schema:
+      name: globals
+  - collection: navigation
+    meta:
+      accountability: all
+      archive_app_filter: true
+      archive_field: is_active
+      archive_value: 'false'
+      collapse: open
+      collection: navigation
+      color: null
+      display_template: null
+      group: website
+      hidden: false
+      icon: menu_open
+      item_duplication_fields:
+        - title
+        - status
+        - items.title
+        - items.type
+        - items.url
+        - items.children
+        - items.parent
+        - items.page
+        - items.post
+      note: Dynamic menus for your site
+      preview_url: null
+      singleton: false
+      sort: 7
+      sort_field: null
+      translations: null
+      unarchive_value: 'true'
+      versioning: false
+    schema:
+      name: navigation
+  - collection: navigation_items
+    meta:
+      accountability: all
+      archive_app_filter: true
+      archive_field: null
+      archive_value: null
+      collapse: open
+      collection: navigation_items
+      color: null
+      display_template: '{{title}}'
+      group: navigation
+      hidden: true
+      icon: navigate_next
+      item_duplication_fields:
+        - children
+        - has_children
+        - image
+        - label
+        - navigation
+        - open_in_new_tab
+        - title
+        - type
+        - url
+        - post
+        - page
+        - sort
+      note: Individual menu items
+      preview_url: null
+      singleton: false
+      sort: 1
+      sort_field: null
+      translations: null
+      unarchive_value: null
+      versioning: false
+    schema:
+      name: navigation_items
+  - collection: page_blocks
+    meta:
+      accountability: all
+      archive_app_filter: false
+      archive_field: null
+      archive_value: null
+      collapse: open
+      collection: page_blocks
+      color: null
+      display_template: null
+      group: pages
+      hidden: true
+      icon: code_blocks
+      item_duplication_fields:
+        - page
+        - sort
+        - item:block_hero.tagline
+        - item:block_hero.headline
+        - item:block_hero.description
+        - item:block_hero.button_group.sort
+        - item:block_hero.button_group.buttons.sort
+        - item:block_hero.button_group.buttons.type
+        - item:block_hero.button_group.buttons.page
+        - item:block_hero.button_group.buttons.post
+        - item:block_hero.button_group.buttons.url
+        - item:block_hero.button_group.buttons.label
+        - item:block_hero.button_group.buttons.variant
+        - item:block_hero.image
+        - item:block_richtext.tagline
+        - item:block_richtext.headline
+        - item:block_richtext.content
+        - item:block_richtext.alignment
+        - item:block_form.tagline
+        - item:block_form.headline
+        - item:block_form.form
+        - item:block_posts.tagline
+        - item:block_posts.headline
+        - item:block_posts.collection
+        - item:block_gallery.tagline
+        - item:block_gallery.headline
+        - item:block_gallery.items
+        - item:block_pricing.tagline
+        - item:block_pricing.headline
+        - item:block_pricing.pricing_cards.title
+        - item:block_pricing.pricing_cards.badge
+        - item:block_pricing.pricing_cards.price
+        - item:block_pricing.pricing_cards.is_highlighted
+        - item:block_pricing.pricing_cards.description
+        - item:block_pricing.pricing_cards.features
+        - item:block_pricing.pricing_cards.button.sort
+        - item:block_pricing.pricing_cards.button.type
+        - item:block_pricing.pricing_cards.button.page
+        - item:block_pricing.pricing_cards.button.post
+        - item:block_pricing.pricing_cards.button.url
+        - item:block_pricing.pricing_cards.button.variant
+        - item:block_pricing.pricing_cards.button.label
+        - item:block_pricing.pricing_cards.sort
+        - collection
+        - hide_block
+        - background
+      note: null
+      preview_url: null
+      singleton: false
+      sort: 3
+      sort_field: sort
+      translations: null
+      unarchive_value: null
+      versioning: false
+    schema:
+      name: page_blocks
+  - collection: pages
+    meta:
+      accountability: all
+      archive_app_filter: true
+      archive_field: status
+      archive_value: archived
+      collapse: open
+      collection: pages
+      color: null
+      display_template: '{{title}}'
+      group: website
+      hidden: false
+      icon: web_asset
+      item_duplication_fields:
+        - sort
+        - title
+        - permalink
+        - status
+        - published_at
+        - seo
+        - blocks.sort
+        - blocks.page
+        - blocks.item:block_hero.tagline
+        - blocks.item:block_hero.headline
+        - blocks.item:block_hero.description
+        - blocks.item:block_hero.button_group.sort
+        - blocks.item:block_hero.button_group.buttons.sort
+        - blocks.item:block_hero.button_group.buttons.type
+        - blocks.item:block_hero.button_group.buttons.page
+        - blocks.item:block_hero.button_group.buttons.post
+        - blocks.item:block_hero.button_group.buttons.url
+        - blocks.item:block_hero.button_group.buttons.label
+        - blocks.item:block_hero.button_group.buttons.variant
+        - blocks.item:block_hero.image
+        - blocks.item:block_hero.layout
+        - blocks.item:block_richtext.tagline
+        - blocks.item:block_richtext.headline
+        - blocks.item:block_richtext.content
+        - blocks.item:block_richtext.alignment
+        - blocks.item:block_form.tagline
+        - blocks.item:block_form.headline
+        - blocks.item:block_form.form
+        - blocks.item:block_posts.tagline
+        - blocks.item:block_posts.headline
+        - blocks.item:block_posts.collection
+        - blocks.item:block_posts.limit
+        - blocks.item:block_gallery.tagline
+        - blocks.item:block_gallery.headline
+        - blocks.item:block_gallery.items.block_gallery
+        - blocks.item:block_gallery.items.directus_file
+        - blocks.item:block_gallery.items.sort
+        - blocks.item:block_pricing.tagline
+        - blocks.item:block_pricing.headline
+        - blocks.item:block_pricing.pricing_cards.title
+        - blocks.item:block_pricing.pricing_cards.badge
+        - blocks.item:block_pricing.pricing_cards.price
+        - blocks.item:block_pricing.pricing_cards.is_highlighted
+        - blocks.item:block_pricing.pricing_cards.description
+        - blocks.item:block_pricing.pricing_cards.features
+        - blocks.item:block_pricing.pricing_cards.button.sort
+        - blocks.item:block_pricing.pricing_cards.button.type
+        - blocks.item:block_pricing.pricing_cards.button.page
+        - blocks.item:block_pricing.pricing_cards.button.post
+        - blocks.item:block_pricing.pricing_cards.button.url
+        - blocks.item:block_pricing.pricing_cards.button.label
+        - blocks.item:block_pricing.pricing_cards.button.variant
+        - blocks.item:block_pricing.pricing_cards.sort
+        - blocks.collection
+        - blocks.hide_block
+        - blocks.background
+      note: Dynamic page builder
+      preview_url: http://localhost:3000{{permalink}}?preview=true&version={{$version}}
+      singleton: false
+      sort: 1
+      sort_field: sort
+      translations: null
+      unarchive_value: draft
+      versioning: true
+    schema:
+      name: pages
+  - collection: post_translation
+    meta:
+      accountability: all
+      archive_app_filter: true
+      archive_field: null
+      archive_value: null
+      collapse: open
+      collection: post_translation
+      color: null
+      display_template: null
+      group: website
+      hidden: false
+      icon: null
+      item_duplication_fields: null
+      note: null
+      preview_url: null
+      singleton: false
+      sort: 2
+      sort_field: null
+      translations: null
+      unarchive_value: null
+      versioning: false
+    schema:
+      name: post_translation
+  - collection: posts
+    meta:
+      accountability: all
+      archive_app_filter: true
+      archive_field: status
+      archive_value: archived
+      collapse: open
+      collection: posts
+      color: null
+      display_template: '{{title}}'
+      group: website
+      hidden: false
+      icon: article
+      item_duplication_fields:
+        - title
+        - slug
+        - author
+        - status
+        - image
+        - description
+        - seo
+      note: Individual blog posts
+      preview_url: http://localhost:3000/blog/{{slug}}?preview=true&version={{$version}}
+      singleton: false
+      sort: 3
+      sort_field: sort
+      translations: null
+      unarchive_value: draft
+      versioning: true
+    schema:
+      name: posts
+  - collection: redirects
+    meta:
+      accountability: all
+      archive_app_filter: true
+      archive_field: null
+      archive_value: null
+      collapse: open
+      collection: redirects
+      color: null
+      display_template: '{{url_from}} • {{response_code}}'
+      group: website
+      hidden: false
+      icon: turn_sharp_right
+      item_duplication_fields: null
+      note: Manage URL redirects for your website
+      preview_url: null
+      singleton: false
+      sort: 9
+      sort_field: null
+      translations: null
+      unarchive_value: null
+      versioning: false
+    schema:
+      name: redirects
+  - collection: sites
+    meta:
+      accountability: all
+      archive_app_filter: true
+      archive_field: null
+      archive_value: null
+      collapse: open
+      collection: sites
+      color: null
+      display_template: null
+      group: website
+      hidden: false
+      icon: null
+      item_duplication_fields: null
+      note: null
+      preview_url: null
+      singleton: false
+      sort: 4
+      sort_field: null
+      translations: null
+      unarchive_value: null
+      versioning: false
+    schema:
+      name: sites
+  - collection: website
+    meta:
+      accountability: all
+      archive_app_filter: true
+      archive_field: null
+      archive_value: null
+      collapse: closed
+      collection: website
+      color: null
+      display_template: null
+      group: null
+      hidden: false
+      icon: folder_special
+      item_duplication_fields: null
+      note: null
+      preview_url: null
+      singleton: false
+      sort: 1
+      sort_field: null
+      translations: null
+      unarchive_value: null
+      versioning: false
+fields:
+  - collection: ai_prompts
+    field: id
+    type: uuid
+    meta:
+      collection: ai_prompts
+      conditions: null
+      display: null
+      display_options: null
+      field: id
+      group: null
+      hidden: true
+      interface: input
+      note: null
+      options: null
+      readonly: true
+      required: false
+      sort: 1
+      special:
+        - uuid
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      name: id
+      table: ai_prompts
+      data_type: uuid
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: false
+      is_unique: true
+      is_indexed: false
+      is_primary_key: true
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: ai_prompts
+    field: sort
+    type: integer
+    meta:
+      collection: ai_prompts
+      conditions: null
+      display: null
+      display_options: null
+      field: sort
+      group: null
+      hidden: true
+      interface: input
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 2
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      name: sort
+      table: ai_prompts
+      data_type: integer
+      default_value: null
+      max_length: null
+      numeric_precision: 32
+      numeric_scale: 0
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: ai_prompts
+    field: name
+    type: string
+    meta:
+      collection: ai_prompts
+      conditions: null
+      display: formatted-value
+      display_options:
+        font: monospace
+      field: name
+      group: null
+      hidden: false
+      interface: input
+      note: >-
+        Unique name for the prompt. Use names like "create-article" or
+        "generate-product-description".
+      options:
+        slug: true
+        trim: true
+      readonly: false
+      required: true
+      sort: 8
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      name: name
+      table: ai_prompts
+      data_type: character varying
+      default_value: null
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: true
+      is_indexed: true
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: ai_prompts
+    field: status
+    type: string
+    meta:
+      collection: ai_prompts
+      conditions: null
+      display: labels
+      display_options:
+        choices:
+          - color: '#A2B5CD'
+            icon: draft_orders
+            text: $t:draft
+            value: draft
+          - color: '#FFA439'
+            icon: rate_review
+            text: In Review
+            value: in_review
+          - color: '#2ECDA7'
+            icon: check
+            text: $t:published
+            value: published
+      field: status
+      group: null
+      hidden: false
+      interface: select-dropdown
+      note: Is this prompt published and available to use?
+      options:
+        choices:
+          - color: '#A2B5CD'
+            icon: draft_orders
+            text: $t:draft
+            value: draft
+          - color: '#FFA439'
+            icon: rate_review
+            text: In Review
+            value: in_review
+          - color: '#2ECDA7'
+            icon: check
+            text: $t:published
+            value: published
+      readonly: false
+      required: false
+      sort: 9
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      name: status
+      table: ai_prompts
+      data_type: character varying
+      default_value: draft
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: false
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: ai_prompts
+    field: description
+    type: text
+    meta:
+      collection: ai_prompts
+      conditions: null
+      display: null
+      display_options: null
+      field: description
+      group: null
+      hidden: false
+      interface: input
+      note: Briefly explain what this prompt does in 1-2 sentences.
+      options: null
+      readonly: false
+      required: false
+      sort: 10
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: description
+      table: ai_prompts
+      data_type: text
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: ai_prompts
+    field: messages
+    type: json
+    meta:
+      collection: ai_prompts
+      conditions: null
+      display: formatted-json-value
+      display_options:
+        format: '{{ role }} • {{ text }}'
+      field: messages
+      group: null
+      hidden: false
+      interface: inline-repeater-interface
+      note: >-
+        Optional: Define the conversation structure between users and AI. Used
+        to add context and improve outputs.
+      options:
+        addLabel: New Message
+        fields:
+          - field: role
+            meta:
+              display: labels
+              display_options:
+                choices:
+                  - icon: person
+                    text: User
+                    value: user
+                  - icon: robot
+                    text: Assistant
+                    value: assistant
+              field: role
+              interface: select-dropdown
+              note: Who is speaking in this message.
+              options:
+                choices:
+                  - icon: person
+                    text: User
+                    value: user
+                  - icon: robot
+                    text: Assistant
+                    value: assistant
+              required: true
+              type: string
+              width: full
+            name: role
+            type: string
+          - field: text
+            meta:
+              display: formatted-value
+              display_options:
+                format: true
+              field: text
+              interface: input-rich-text-md
+              note: >-
+                The actual content of the message. You can use {{ curly_braces
+                }} for placeholders that will be replaced with real data.
+              required: true
+              type: text
+              width: full
+            name: text
+            type: text
+        showConfirmDiscard: true
+        template: '{{ role }} • {{ text }}'
+      readonly: false
+      required: false
+      sort: 12
+      special:
+        - cast-json
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: messages
+      table: ai_prompts
+      data_type: json
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: ai_prompts
+    field: meta_header_ai_prompts
+    type: alias
+    meta:
+      collection: ai_prompts
+      conditions: null
+      display: null
+      display_options: null
+      field: meta_header_ai_prompts
+      group: null
+      hidden: false
+      interface: super-header
+      note: null
+      options:
+        help: >-
+          <h2>AI Prompts Collection Help</h2>
+
+          <h3>Name</h3>
+
+          <p><em>Unique identifier for this prompt</em></p>
+
+          <p>Enter a clear, concise name that describes what this prompt does.
+          Use kebab-case (lowercase with hyphens) for consistency, like
+          "create-article" or "generate-product-description".</p>
+
+          <h3>Description</h3>
+
+          <p><em>Short description for the prompt to display to users</em></p>
+
+          <p>Briefly explain what this prompt does in 1-2 sentences. Focus on
+          the outcome users can expect when using this prompt. Keep it clear and
+          action-oriented.</p>
+
+          <h3>System Prompt</h3>
+
+          <p><em>Instructions that shape how the AI responds</em></p>
+
+          <p>This is the foundation of your AI prompt. Define the AI's role,
+          capabilities, and constraints here. Be specific about tone, style, and
+          approach. This text isn't visible to end users but significantly
+          impacts output quality.</p>
+
+          <h3>Messages</h3>
+
+          <p><em>Define the conversation structure between users and AI</em></p>
+
+          <h4>Role</h4>
+
+          <p><em>Who is speaking in this message</em></p>
+
+          <p>Select "User" for instructions from the human, or "Assistant" for
+          example responses from the AI. Most prompt templates begin with a user
+          message.</p>
+
+          <h4>Text</h4>
+
+          <p><em>The actual content of the message</em></p>
+
+          <p>For user messages, include placeholders with double curly braces
+          {{like this}} that will be replaced with real data. For assistant
+          messages, provide example responses that model the desired output
+          format.</p>
+
+          <h3>Status</h3>
+
+          <p><em>Is this prompt published and available to use?</em></p>
+
+          <p>Toggle between draft and published states. Only published prompts
+          are available to users in the content creation interface.</p>
+
+          <h3>Creating Effective AI Prompts</h3>
+
+          <p>Good prompts are clear, specific, and structured. Here are quick
+          tips:</p>
+
+          <ol>
+
+          <li><strong>Be specific about deliverables</strong> - Define exactly
+          what output you want (word count, format, sections).</li>
+
+          <li><strong>Establish context</strong> - Provide relevant background
+          information the AI needs to understand the task.</li>
+
+          <li><strong>Define the audience</strong> - Specify who will read the
+          content and their knowledge level.</li>
+
+          <li><strong>Use placeholders consistently</strong> - Format
+          placeholders with double curly braces {{like this}} for
+          variables.</li>
+
+          <li><strong>Include examples</strong> - Show what good outputs look
+          like to guide the AI's response format.</li>
+
+          <li><strong>Balance guidance with flexibility</strong> - Provide
+          enough direction without over-constraining the AI's ability to
+          generate creative content.</li>
+
+          <li><strong>Test and iterate</strong> - Create your prompt, test the
+          output, and refine based on results.</li>
+
+          </ol>
+
+          <p>Remember: The best prompts clearly communicate what you want while
+          giving the AI enough information to generate high-quality, relevant
+          content.</p>
+        subtitle: '{{status}} • Last Updated: {{updated_on}}'
+        title: '{{name}}'
+      readonly: false
+      required: false
+      sort: 7
+      special:
+        - alias
+        - no-data
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+  - collection: ai_prompts
+    field: system_prompt
+    type: text
+    meta:
+      collection: ai_prompts
+      conditions: null
+      display: null
+      display_options: null
+      field: system_prompt
+      group: null
+      hidden: false
+      interface: input-multiline
+      note: Instructions that shape how the AI responds.
+      options: null
+      readonly: false
+      required: false
+      sort: 11
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: system_prompt
+      table: ai_prompts
+      data_type: text
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: ai_prompts
+    field: date_created
+    type: timestamp
+    meta:
+      collection: ai_prompts
+      conditions: null
+      display: datetime
+      display_options:
+        relative: true
+      field: date_created
+      group: null
+      hidden: true
+      interface: datetime
+      note: null
+      options: null
+      readonly: true
+      required: false
+      sort: 3
+      special:
+        - date-created
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      name: date_created
+      table: ai_prompts
+      data_type: timestamp with time zone
+      default_value: CURRENT_TIMESTAMP
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: ai_prompts
+    field: user_created
+    type: uuid
+    meta:
+      collection: ai_prompts
+      conditions: null
+      display: user
+      display_options: null
+      field: user_created
+      group: null
+      hidden: true
+      interface: select-dropdown-m2o
+      note: null
+      options:
+        template: '{{avatar}} {{first_name}} {{last_name}}'
+      readonly: true
+      required: false
+      sort: 4
+      special:
+        - user-created
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      name: user_created
+      table: ai_prompts
+      data_type: uuid
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: directus_users
+      foreign_key_column: id
+  - collection: ai_prompts
+    field: date_updated
+    type: timestamp
+    meta:
+      collection: ai_prompts
+      conditions: null
+      display: datetime
+      display_options:
+        relative: true
+      field: date_updated
+      group: null
+      hidden: true
+      interface: datetime
+      note: null
+      options: null
+      readonly: true
+      required: false
+      sort: 5
+      special:
+        - date-updated
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      name: date_updated
+      table: ai_prompts
+      data_type: timestamp with time zone
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: ai_prompts
+    field: user_updated
+    type: uuid
+    meta:
+      collection: ai_prompts
+      conditions: null
+      display: user
+      display_options: null
+      field: user_updated
+      group: null
+      hidden: true
+      interface: select-dropdown-m2o
+      note: null
+      options:
+        template: '{{avatar}} {{first_name}} {{last_name}}'
+      readonly: true
+      required: false
+      sort: 6
+      special:
+        - user-updated
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      name: user_updated
+      table: ai_prompts
+      data_type: uuid
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: directus_users
+      foreign_key_column: id
+  - collection: block_button
+    field: id
+    type: uuid
+    meta:
+      collection: block_button
+      conditions: null
+      display: null
+      display_options: null
+      field: id
+      group: null
+      hidden: true
+      interface: input
+      note: null
+      options: null
+      readonly: true
+      required: false
+      sort: 1
+      special:
+        - uuid
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      name: id
+      table: block_button
+      data_type: uuid
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: false
+      is_unique: true
+      is_indexed: false
+      is_primary_key: true
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: block_button
+    field: sort
+    type: integer
+    meta:
+      collection: block_button
+      conditions: null
+      display: null
+      display_options: null
+      field: sort
+      group: null
+      hidden: true
+      interface: input
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 2
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      name: sort
+      table: block_button
+      data_type: integer
+      default_value: null
+      max_length: null
+      numeric_precision: 32
+      numeric_scale: 0
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: block_button
+    field: type
+    type: string
+    meta:
+      collection: block_button
+      conditions: null
+      display: labels
+      display_options:
+        choices:
+          - icon: web_asset
+            text: Page
+            value: page
+          - icon: article
+            text: Post
+            value: post
+          - icon: link
+            text: URL
+            value: url
+        format: true
+      field: type
+      group: null
+      hidden: false
+      interface: select-dropdown
+      note: >-
+        What type of link is this? Page and Post allow you to link to internal
+        content. URL is for external content. Group can contain other menu
+        items.
+      options:
+        choices:
+          - icon: web_asset
+            text: Page
+            value: page
+          - icon: article
+            text: Post
+            value: post
+          - icon: link
+            text: URL
+            value: url
+      readonly: false
+      required: false
+      sort: 8
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      name: type
+      table: block_button
+      data_type: character varying
+      default_value: null
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: block_button
+    field: page
+    type: uuid
+    meta:
+      collection: block_button
+      conditions:
+        - hidden: false
+          name: IF type = pages
+          options:
+            enableCreate: true
+            enableSelect: true
+          rule:
+            _and:
+              - type:
+                  _eq: page
+      display: related-values
+      display_options: null
+      field: page
+      group: null
+      hidden: true
+      interface: select-dropdown-m2o
+      note: The internal page to link to.
+      options:
+        template: '{{title}} - {{permalink}}'
+      readonly: false
+      required: false
+      sort: 9
+      special:
+        - m2o
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      name: page
+      table: block_button
+      data_type: uuid
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: pages
+      foreign_key_column: id
+  - collection: block_button
+    field: post
+    type: uuid
+    meta:
+      collection: block_button
+      conditions:
+        - hidden: false
+          name: IF type = post
+          options:
+            enableCreate: true
+            enableSelect: true
+          rule:
+            _and:
+              - type:
+                  _eq: post
+      display: related-values
+      display_options: null
+      field: post
+      group: null
+      hidden: true
+      interface: select-dropdown-m2o
+      note: The internal post to link to.
+      options:
+        template: '{{title}} - {{slug}}'
+      readonly: false
+      required: false
+      sort: 10
+      special:
+        - m2o
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      name: post
+      table: block_button
+      data_type: uuid
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: posts
+      foreign_key_column: id
+  - collection: block_button
+    field: label
+    type: string
+    meta:
+      collection: block_button
+      conditions: null
+      display: null
+      display_options: null
+      field: label
+      group: null
+      hidden: false
+      interface: input
+      note: Text to include on the button.
+      options: null
+      readonly: false
+      required: false
+      sort: 12
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      name: label
+      table: block_button
+      data_type: character varying
+      default_value: null
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: block_button
+    field: variant
+    type: string
+    meta:
+      collection: block_button
+      conditions: null
+      display: formatted-value
+      display_options:
+        format: true
+      field: variant
+      group: null
+      hidden: false
+      interface: select-dropdown
+      note: What type of button
+      options:
+        choices:
+          - text: Default
+            value: default
+          - text: Outline
+            value: outline
+          - text: Soft
+            value: soft
+          - text: Ghost
+            value: ghost
+          - text: Link
+            value: link
+      readonly: false
+      required: false
+      sort: 13
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      name: variant
+      table: block_button
+      data_type: character varying
+      default_value: solid
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: block_button
+    field: button_group
+    type: uuid
+    meta:
+      collection: block_button
+      conditions: null
+      display: null
+      display_options: null
+      field: button_group
+      group: null
+      hidden: true
+      interface: select-dropdown-m2o
+      note: The id of the Button Group this button belongs to.
+      options: null
+      readonly: false
+      required: false
+      sort: 3
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: button_group
+      table: block_button
+      data_type: uuid
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: block_button_group
+      foreign_key_column: id
+  - collection: block_button
+    field: url
+    type: string
+    meta:
+      collection: block_button
+      conditions:
+        - hidden: false
+          name: If type = external
+          options:
+            clear: false
+            font: sans-serif
+            masked: false
+            slug: false
+            trim: false
+          rule:
+            _and:
+              - type:
+                  _eq: url
+      display: formatted-value
+      display_options:
+        format: true
+      field: url
+      group: null
+      hidden: true
+      interface: input
+      note: >-
+        The URL to link to. Could be relative (ie `/my-page`) or a full external
+        URL (ie `https://docs.directus.io`)
+      options:
+        iconLeft: link
+        trim: true
+      readonly: false
+      required: false
+      sort: 11
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      name: url
+      table: block_button
+      data_type: character varying
+      default_value: null
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: block_button
+    field: date_created
+    type: timestamp
+    meta:
+      collection: block_button
+      conditions: null
+      display: datetime
+      display_options:
+        relative: true
+      field: date_created
+      group: null
+      hidden: true
+      interface: datetime
+      note: null
+      options: null
+      readonly: true
+      required: false
+      sort: 4
+      special:
+        - date-created
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      name: date_created
+      table: block_button
+      data_type: timestamp with time zone
+      default_value: CURRENT_TIMESTAMP
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: block_button
+    field: user_created
+    type: uuid
+    meta:
+      collection: block_button
+      conditions: null
+      display: user
+      display_options: null
+      field: user_created
+      group: null
+      hidden: true
+      interface: select-dropdown-m2o
+      note: null
+      options:
+        template: '{{avatar}} {{first_name}} {{last_name}}'
+      readonly: true
+      required: false
+      sort: 5
+      special:
+        - user-created
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      name: user_created
+      table: block_button
+      data_type: uuid
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: directus_users
+      foreign_key_column: id
+  - collection: block_button
+    field: date_updated
+    type: timestamp
+    meta:
+      collection: block_button
+      conditions: null
+      display: datetime
+      display_options:
+        relative: true
+      field: date_updated
+      group: null
+      hidden: true
+      interface: datetime
+      note: null
+      options: null
+      readonly: true
+      required: false
+      sort: 6
+      special:
+        - date-updated
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      name: date_updated
+      table: block_button
+      data_type: timestamp with time zone
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: block_button
+    field: user_updated
+    type: uuid
+    meta:
+      collection: block_button
+      conditions: null
+      display: user
+      display_options: null
+      field: user_updated
+      group: null
+      hidden: true
+      interface: select-dropdown-m2o
+      note: null
+      options:
+        template: '{{avatar}} {{first_name}} {{last_name}}'
+      readonly: true
+      required: false
+      sort: 7
+      special:
+        - user-updated
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      name: user_updated
+      table: block_button
+      data_type: uuid
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: directus_users
+      foreign_key_column: id
+  - collection: block_button_group
+    field: id
+    type: uuid
+    meta:
+      collection: block_button_group
+      conditions: null
+      display: null
+      display_options: null
+      field: id
+      group: null
+      hidden: true
+      interface: input
+      note: null
+      options: null
+      readonly: true
+      required: false
+      sort: 1
+      special:
+        - uuid
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      name: id
+      table: block_button_group
+      data_type: uuid
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: false
+      is_unique: true
+      is_indexed: false
+      is_primary_key: true
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: block_button_group
+    field: sort
+    type: integer
+    meta:
+      collection: block_button_group
+      conditions: null
+      display: null
+      display_options: null
+      field: sort
+      group: null
+      hidden: true
+      interface: input
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 2
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      name: sort
+      table: block_button_group
+      data_type: integer
+      default_value: null
+      max_length: null
+      numeric_precision: 32
+      numeric_scale: 0
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: block_button_group
+    field: buttons
+    type: alias
+    meta:
+      collection: block_button_group
+      conditions: null
+      display: related-values
+      display_options:
+        template: '{{label}} - {{type}}'
+      field: buttons
+      group: null
+      hidden: false
+      interface: list-o2m
+      note: Add individual buttons to the button group.
+      options:
+        enableLink: true
+        template: '{{label}} - {{type}}'
+      readonly: false
+      required: false
+      sort: 7
+      special:
+        - o2m
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+  - collection: block_button_group
+    field: date_created
+    type: timestamp
+    meta:
+      collection: block_button_group
+      conditions: null
+      display: datetime
+      display_options:
+        relative: true
+      field: date_created
+      group: null
+      hidden: true
+      interface: datetime
+      note: null
+      options: null
+      readonly: true
+      required: false
+      sort: 3
+      special:
+        - date-created
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      name: date_created
+      table: block_button_group
+      data_type: timestamp with time zone
+      default_value: CURRENT_TIMESTAMP
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: block_button_group
+    field: user_created
+    type: uuid
+    meta:
+      collection: block_button_group
+      conditions: null
+      display: user
+      display_options: null
+      field: user_created
+      group: null
+      hidden: true
+      interface: select-dropdown-m2o
+      note: null
+      options:
+        template: '{{avatar}} {{first_name}} {{last_name}}'
+      readonly: true
+      required: false
+      sort: 4
+      special:
+        - user-created
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      name: user_created
+      table: block_button_group
+      data_type: uuid
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: directus_users
+      foreign_key_column: id
+  - collection: block_button_group
+    field: date_updated
+    type: timestamp
+    meta:
+      collection: block_button_group
+      conditions: null
+      display: datetime
+      display_options:
+        relative: true
+      field: date_updated
+      group: null
+      hidden: true
+      interface: datetime
+      note: null
+      options: null
+      readonly: true
+      required: false
+      sort: 5
+      special:
+        - date-updated
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      name: date_updated
+      table: block_button_group
+      data_type: timestamp with time zone
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: block_button_group
+    field: user_updated
+    type: uuid
+    meta:
+      collection: block_button_group
+      conditions: null
+      display: user
+      display_options: null
+      field: user_updated
+      group: null
+      hidden: true
+      interface: select-dropdown-m2o
+      note: null
+      options:
+        template: '{{avatar}} {{first_name}} {{last_name}}'
+      readonly: true
+      required: false
+      sort: 6
+      special:
+        - user-updated
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      name: user_updated
+      table: block_button_group
+      data_type: uuid
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: directus_users
+      foreign_key_column: id
+  - collection: block_form
+    field: id
+    type: uuid
+    meta:
+      collection: block_form
+      conditions: null
+      display: null
+      display_options: null
+      field: id
+      group: null
+      hidden: true
+      interface: input
+      note: null
+      options: null
+      readonly: true
+      required: false
+      sort: 1
+      special:
+        - uuid
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: id
+      table: block_form
+      data_type: uuid
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: false
+      is_unique: true
+      is_indexed: false
+      is_primary_key: true
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: block_form
+    field: form
+    type: uuid
+    meta:
+      collection: block_form
+      conditions: null
+      display: null
+      display_options: null
+      field: form
+      group: null
+      hidden: false
+      interface: select-dropdown-m2o
+      note: Form to show within block
+      options: null
+      readonly: false
+      required: false
+      sort: 9
+      special:
+        - m2o
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: form
+      table: block_form
+      data_type: uuid
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: forms
+      foreign_key_column: id
+  - collection: block_form
+    field: headline
+    type: text
+    meta:
+      collection: block_form
+      conditions: null
+      display: null
+      display_options: null
+      field: headline
+      group: null
+      hidden: false
+      interface: input
+      note: Larger main headline for this page section.
+      options:
+        defaultView:
+          bearing: 0
+          center:
+            lat: 0
+            lng: 0
+          pitch: 0
+          zoom: 0
+        geometryType: Point
+      readonly: false
+      required: false
+      sort: 8
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: headline
+      table: block_form
+      data_type: text
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: block_form
+    field: tagline
+    type: string
+    meta:
+      collection: block_form
+      conditions: null
+      display: null
+      display_options: null
+      field: tagline
+      group: null
+      hidden: false
+      interface: input
+      note: >-
+        Smaller copy shown above the headline to label a section or add extra
+        context.
+      options: null
+      readonly: false
+      required: false
+      sort: 7
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: tagline
+      table: block_form
+      data_type: character varying
+      default_value: null
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: block_form
+    field: meta_header_block_form
+    type: alias
+    meta:
+      collection: block_form
+      conditions: null
+      display: null
+      display_options: null
+      field: meta_header_block_form
+      group: null
+      hidden: false
+      interface: super-header
+      note: null
+      options:
+        help: >-
+          <p>Embed interactive forms to collect information from your visitors.
+          Great for:</p>
+
+          <ul>
+
+          <li>Contact forms</li>
+
+          <li>Newsletter signups</li>
+
+          <li>Event registrations</li>
+
+          <li>Feedback collection</li>
+
+          <li>Lead generation</li>
+
+          </ul>
+
+          <p>When adding a form:</p>
+
+          <ul>
+
+          <li>Choose from your pre-configured form templates</li>
+
+          <li>Add a clear headline explaining the form's purpose</li>
+
+          <li>Consider adding a
